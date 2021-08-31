@@ -242,6 +242,51 @@ DOM 요소 노드는 편의를 위해 기본 프로퍼티 외에 추가적인 �
 
 ```
 
+```javascript
+
+<html>
+<body>
+  <div>사용자:</div>
+  <ul>
+    <li>John</li>
+    <li>Pete</li>
+  </ul>
+</body>
+</html>
+
+<div> DOM 노드에 접근하는 방법
+
+1. document.body.firstElementChild
+2. document.body.children[0]
+3. document.body.childNodes[1] // 첫번째 노드는 공백이므로 두번째 노드를 가져옴. 
+
+<ul> DOM 노드에 접근하는 방법
+
+document.body.lastElementChild
+document.body.children[1]
+
+
+두번째 <li> Pete 에 접근하는방법
+cdocument.body.lastElementChild.lastElementChild
+
+```
+
+```javascript
+
+임의의 DOM 요소 노드 elem이 있다고 가정할떄
+
+elem.lastChild.nextSibling은 항상 null 인가?
+=> true, elem.lastChild는 항상마지막 노드이기 떄문에 nextSibling이 존재하지 않는다. 
+
+elem.children[0].previousSibling은 항상  nuillk인가?
+=> false, elem.children[0]은 요소 노드 중 첫번쨰 자식 노드이기 떄문에 이 앞에 요소노드가 아닌 다른 노드가 올 수 있다. previousSibling은 텍스트 노드가 될 수도 있다. 
+
+이 두가지 케이스 모두 자식노드가 없는 경우 에러가 발생한다.
+
+자식 노드가 없으면 elem.lastChild는 null이 되기 떄문에 ele.lastChild.nextSibling에 접근할 수 없고
+elem.children은 빈배열 []과 같이 빈 상태가 된다. 
+```
+
 
 
 
