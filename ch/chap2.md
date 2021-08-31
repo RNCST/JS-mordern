@@ -80,3 +80,4 @@ head 태그와 title 태그 사이의 새줄과 약간의 공백이 잇는데 �
 $0.style.background = 'red';
 $1.style.background = 'blue;;
 ```
+
