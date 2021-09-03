@@ -79,6 +79,29 @@ loadScript('/my/script.js', function(script) {
 
 ### 에러 핸들링
 
+```javascript
+function loadScript(src, callback) {
+    let script = document.createElement('script');
+    script.src = src;
 
+    script.onload = () => callback(null, script);
+    script.onerror = () => callback(new Error(`${src}불러오는중 에러`));
+    
+    document.head.append(Script);
+
+    ==> 이코드에서 loadScript는 로그에 성공하면 callback(null, script); 실패하면 callback(Error)를 호출.. 
+
+    loadScript('my/script.js', function(error, script) {})
+    if(error) {
+        //에러처리
+    } else {
+        //스크립트 로딩이 끝남.
+    }
+
+    ==> callback 의 첫번쨰 인수는 에러를 위해 남겨두고 에러가 발생하면 이 인수는 통해 callback(Err)이 호출 된다.
+
+    두번째 인수는 에러가 발생하지 않았을 떄를 위하 남겨두며 원하는 동작이 성공하는 경우 callback(null, resul1,result2...)이 호출이 된다. 
+}
+```
 
 
