@@ -109,7 +109,7 @@ const tobj = {
     console.log(this.name);
   },
   arrow: () => {
-    // console.log(this.name);
+    console.log(tobj.name);
   },
 };
 tobj.normal();

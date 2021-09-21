@@ -44,12 +44,48 @@ console.log(b);
 
 
 
-const e = numbers.map(number => {
-  return number < 3
-})
+const e = numbers.map(number => number < 3)
 console.log(e);
 
-f = numbers.filter(number => {
-  return number <3
-})
+const f = numbers.filter(number => number <3)
+  // callback에서 반환되는값이 true인경우에만 배열에 넣어준다.
+
 console.log(f);
+
+
+const g = fruits.find(fruit =>  /^B/.test(fruit));
+  // B로시작하는것을 찾는다
+  // find의 callback함수에서 true라는 데이터가 반환이되면 반복을 멈춘다.
+console.log(g);
+
+
+const h = fruits.findIndex(fruit => /^C/.test(fruit));
+  // 특정한 item의 index번호를 찾는다.
+console.log(h);
+
+
+const i = numbers.includes(3);
+console.log(i);
+const j = numbers.includes(5);
+console.log(j);
+// 인수의 데이터가 배열에 들어있는지 확인
+
+
+numbers.push(5)
+console.log(numbers);
+// 가장 뒤쪽에 데이터를 삽입
+numbers.unshift(0)
+console.log(numbers);
+// 가장 앞쪽에 데이터를 삽입
+
+numbers.reverse()
+console.log(numbers);
+numbers.reverse()
+console.log(numbers);
+
+
+
+numbers.splice(2,0,999)
+// 2 => 배열의 index번호 , 0 => 0개를 지운다. , 그자리에 999를 끼워넣는다.
+
+console.log(numbers);
